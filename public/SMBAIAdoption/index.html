@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMB AI Adoption Series — Oviedo Publishing</title>
+    <meta name="description" content="A comprehensive series for small and mid-sized businesses adopting AI tools. Three volumes covering operations, strategy, and implementation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .font-display {
+            font-family: 'Syne', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: radial-gradient(circle, #f59e0b 0%, #f97316 35%, #ef4444 75%, #dc2626 100%);
+            padding: 80px 48px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 40px;
+        }
+
+        .location-badge span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 800;
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            max-width: 800px;
+        }
+
+        h1 .highlight {
+            color: #fef3c7;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            max-width: 600px;
+            margin-bottom: 48px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 28px;
+            background: white;
+            color: #d93a18;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #fef3c7;
+            transform: translateY(-2px);
+        }
+
+        /* Volumes Grid */
+        .volumes-section {
+            padding: 100px 48px;
+            background: #f8fafc;
+        }
+
+        .volumes-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #d93a18;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .volumes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .volume-card {
+            background: white;
+            border-radius: 12px;
+            padding: 36px 28px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .volume-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            border-color: #d93a18;
+        }
+
+        .volume-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #d93a18;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .volume-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .volume-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+        }
+
+        .status-available {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status-coming {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        .volume-card p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .volume-link {
+            color: #d93a18;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .volume-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 48px;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f59e0b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 24px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .volumes-section {
+                padding: 60px 24px;
+            }
+
+            .volumes-grid {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="location-badge">
+                <span>📍 OVIEDO, FLORIDA</span>
+            </div>
+
+            <h1>
+                Master AI adoption
+                <span class="highlight">at your pace.</span>
+            </h1>
+
+            <p class="subtitle">
+                A three-volume series designed specifically for small and mid-sized business owners implementing AI tools. From operations to strategy to execution—practical frameworks you can use immediately.
+            </p>
+
+            <a href="../" class="cta-button">
+                Back to Oviedo Publishing
+                <span>→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Volumes Section -->
+    <section class="volumes-section">
+        <div class="volumes-container">
+            <div class="section-header">
+                <span class="section-label">The Series</span>
+                <h2>Three Volumes, One Vision</h2>
+                <p>Each volume builds on the last, taking you from foundational knowledge through advanced implementation.</p>
+            </div>
+
+            <div class="volumes-grid">
+                <!-- Volume 1 -->
+                <div class="volume-card">
+                    <span class="volume-number">Vol. 1</span>
+                    <h3>Operations</h3>
+                    <div class="volume-status status-available">✓ Available Now</div>
+                    <p>
+                        Automate your day-to-day workflows. Learn how to identify opportunities in your business operations and implement AI tools without technical expertise.
+                    </p>
+                    <a href="../#catalog" class="volume-link">Read more →</a>
+                </div>
+
+                <!-- Volume 2 -->
+                <div class="volume-card">
+                    <span class="volume-number">Vol. 2</span>
+                    <h3>Strategy</h3>
+                    <div class="volume-status status-coming">Coming Winter 2026</div>
+                    <p>
+                        Build a competitive advantage. Understand how AI reshapes market positioning and develop a sustainable AI strategy for your business.
+                    </p>
+                    <a href="../#catalog" class="volume-link">Coming soon →</a>
+                </div>
+
+                <!-- Volume 3 -->
+                <div class="volume-card">
+                    <span class="volume-number">Vol. 3</span>
+                    <h3>Integration</h3>
+                    <div class="volume-status status-coming">Coming 2027</div>
+                    <p>
+                        Scale across your organization. Deep dive into deploying AI across teams, managing change, and measuring long-term success.
+                    </p>
+                    <a href="../#catalog" class="volume-link">Coming soon →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            The SMB AI Adoption Series by
+            <a href="https://oviedopublishing.com">Oviedo Publishing</a>
+        </p>
+        <p style="margin-top: 12px; opacity: 0.7;">
+            © 2026 David M. Elgueta. All rights reserved.
+        </p>
+    </footer>
+</body>
+</html>

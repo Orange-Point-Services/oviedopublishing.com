@@ -2,7 +2,7 @@
 // A small press in Oviedo, FL. Quality books for doers.
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "theme": "cream",
+  "theme": "orange",
   "heroLayout": "asymmetric",
   "showSubmissions": true
 }/*EDITMODE-END*/;
@@ -35,6 +35,15 @@ const THEMES = {
     rule: "#2A1410",
     accent: "#7A1F14",
     label: "Oxblood"
+  },
+  orange: {
+    paper: "linear-gradient(135deg, #E84C3D 0%, #F08746 50%, #F5A962 100%)",
+    paperDeep: "#E84C3D",
+    ink: "#FFFFFF",
+    inkSoft: "#FFFAFF",
+    rule: "#FFFFFF",
+    accent: "#FFD700",
+    label: "Vibrant orange"
   }
 };
 
