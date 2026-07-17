@@ -1,5 +1,5 @@
 import { BookOpen, ShoppingCart, Clock, ExternalLink } from 'lucide-react';
-import type { BookWithDetails, FormatType } from '../lib/supabase';
+import type { BookWithDetails, FormatType } from '../lib/types';
 import { useReveal } from '../lib/useReveal';
 
 interface BookCardProps {

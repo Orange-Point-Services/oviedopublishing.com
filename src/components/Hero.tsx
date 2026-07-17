@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { Search, ArrowRight, BookOpen, Star, MapPin } from 'lucide-react';
-import type { BookWithDetails } from '../lib/supabase';
+import type { BookWithDetails } from '../lib/types';
 
 interface HeroProps {
   featuredBook: BookWithDetails | null;

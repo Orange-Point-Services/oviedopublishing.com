@@ -1,5 +1,5 @@
 import { BookOpen, ExternalLink } from 'lucide-react';
-import type { BookWithDetails } from '../lib/supabase';
+import type { BookWithDetails } from '../lib/types';
 import { useReveal } from '../lib/useReveal';
 
 interface AuthorSectionProps {

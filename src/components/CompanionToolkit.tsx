@@ -10,7 +10,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from 'lucide-react';
-import type { BookWithDetails, FileType } from '../lib/supabase';
+import type { BookWithDetails, FileType } from '../lib/types';
 import { useReveal } from '../lib/useReveal';
 
 interface CompanionToolkitProps {
