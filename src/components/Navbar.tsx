@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, BookOpen } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#home' },
@@ -54,28 +54,11 @@ export default function Navbar() {
             onClick={() => handleNavClick('#home')}
             className="flex items-center gap-2.5 group"
           >
-            <div className={`w-8 h-8 rounded flex items-center justify-center transition-colors ${
-              scrolled ? 'bg-coral-600' : 'bg-white/20'
-            }`}>
-              <BookOpen className={`w-4 h-4 ${scrolled ? 'text-white' : 'text-white'}`} />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span
-                className={`font-display font-700 text-sm tracking-wide transition-colors ${
-                  scrolled ? 'text-slate-900' : 'text-white'
-                }`}
-                style={{ fontWeight: 700 }}
-              >
-                OVIEDO
-              </span>
-              <span
-                className={`font-mono text-[9px] tracking-widest uppercase transition-colors ${
-                  scrolled ? 'text-slate-400' : 'text-white/70'
-                }`}
-              >
-                PUBLISHING
-              </span>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Oviedo Publishing"
+              className="w-10 h-10 rounded object-cover shadow-sm"
+            />
           </button>
 
           {/* Desktop nav */}
