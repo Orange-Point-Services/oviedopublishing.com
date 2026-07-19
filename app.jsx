@@ -50,31 +50,30 @@ const THEMES = {
 // ── Catalog ──────────────────────────────────────────────────────────────
 const CATALOG = [
   {
-    id: "draft-proof-house",
-    title: "The Draft-Proof House",
-    subtitle: "A practical handbook for sealing, insulating, and tightening up an older home — without tearing it apart.",
-    author: "Marco Oviedo",
-    pubDate: "Spring 2026",
-    pages: 312,
-    isbn: "978-1-7385920-0-3",
+    id: "smb-ai-playbook",
+    title: "The SMB AI Adoption Playbook",
+    subtitle: "Volume I. A field guide for owner-operators introducing AI tools to a 5-to-50-person business.",
+    author: "David M. Elgueta",
+    pubDate: "July 2026",
+    pages: 87,
+    isbn: "978-1-7385920-1-0",
     format: "Paperback / eBook",
-    status: "Now available",
+    status: "Coming soon",
     materials: [
-      { kind: "PDF", name: "Air-leak audit checklist", size: "2 pages", ref: "Ch. 3" },
-      { kind: "XLSX", name: "Heat-loss calculator", size: "1 sheet", ref: "Ch. 5" },
-      { kind: "PDF", name: "Window weatherstripping diagrams", size: "8 pages", ref: "Ch. 7" },
-      { kind: "PDF", name: "Attic insulation R-value worksheet", size: "3 pages", ref: "Ch. 9" },
-      { kind: "ZIP", name: "Printable door-sweep templates", size: "12 files", ref: "Appendix B" }
+      { kind: "PDF", name: "Vendor evaluation rubric", size: "4 pages", ref: "Ch. 2" },
+      { kind: "DOCX", name: "Pilot-program one-pager template", size: "1 page", ref: "Ch. 4" },
+      { kind: "XLSX", name: "ROI worksheet", size: "2 sheets", ref: "Ch. 6" },
+      { kind: "ZIP", name: "Sample policy documents", size: "9 files", ref: "Ch. 8" }
     ]
   },
   {
     id: "smb-ai-playbook",
     title: "The SMB AI Adoption Playbook",
-    subtitle: "Volume I. A field guide for owner-operators introducing AI tools to a 5-to-50-person business.",
-    author: "Marco Oviedo",
-    pubDate: "Late 2026",
-    pages: 248,
-    isbn: "978-1-7385920-1-0",
+    subtitle: "Volume II. A field guide for owner-operators introducing AI tools to a 5-to-50-person business.",
+    author: "David M. Elgueta",
+    pubDate: "August 2026",
+    pages: 88,
+    isbn: "",
     format: "Paperback / eBook",
     status: "Coming soon",
     materials: [
